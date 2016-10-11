@@ -2,4 +2,4 @@ The game I am making is Trivia. It will consist of three different categories: M
 
 //https://trello.com/b/L65G5HfJ/welcome-board
 
-!{wireframe}(/assets/wireframe.JPG)
+![wireframe](/assets/wireframe.JPG)
