@@ -1,83 +1,140 @@
-$(document).ready(function() 
-{    $("#results").click(function() {                
-
-if (!$("input[@name=q1]:checked").val() ||            
-!$("input[@name=q2]:checked").val() ||            
-!$("input[@name=q3]:checked").val() ||            
-!$("input[@name=q4]:checked").val() ||            
-!$("input[@name=q5]:checked").val() ||            
-!$("input[@name=q6]:checked").val() ||            
-!$("input[@name=q7]:checked").val() ||            
-!$("input[@name=q8]:checked").val() ||            
-!$("input[@name=q9]:checked").val() ||            
-!$("input[@name=q10]:checked").val()            
-) {            
-alert("You're not done yet!");        
-}        
-
-else {            
-var cat1name = "1";            
-var cat2name = "2";            
-var cat3name = "3";            
-var cat4name = "4";            
-var cat5name = "5";            
-var cat6name = "6";            
-var cat7name = "7";            
-var cat8name = "8";            
-var cat9name = "9";            
-var cat10name = "10";            
-var cat11name = "None";            
-            
-
-var cat1 = ($("input[@name=q1]:checked").val() != "a"); 
-           
-var cat2 = ($("input[@name=q2]:checked").val() != "b");  
-
-var cat3 = ($("input[@name=q3]:checked").val() != "c");  
-
-var cat4 = ($("input[@name=q4]:checked").val() != "d");  
-
-var cat5 = ($("input[@name=q5]:checked").val() != "a"); 
-
-var cat6 = ($("input[@name=q6]:checked").val() != "b");  
-
-var cat7 = ($("input[@name=q7]:checked").val() != "c"); 
-
-var cat8 = ($("input[@name=q8]:checked").val() != "d");  
-
-var cat9 = ($("input[@name=q9]:checked").val() != "a"); 
-
-var cat10 = ($("input[@name=q10]:checked").val() != "b");  
-
-var cat11 = (!cat1 && !cat2 && !cat3 && !cat4 && !cat5 && !cat6 && !cat7 && !cat8 && !cat9 && !cat10); var categories = [];                        
-
-if (cat1) { categories.push(cat1name) };            
-if (cat2) { categories.push(cat2name) };            
-if (cat3) { categories.push(cat3name) };            
-if (cat4) { categories.push(cat4name) };            
-if (cat5) { categories.push(cat5name) };            
-if (cat6) { categories.push(cat6name) };            
-if (cat7) { categories.push(cat7name) };            
-if (cat8) { categories.push(cat8name) };            
-if (cat9) { categories.push(cat9name) };            
-if (cat10) { categories.push(cat10name) };            
-if (cat11) { categories.push(cat11name) };                        
-
-var catStr = 'You answered the following questions incorrectly: ' + categories.join(', ') + '';                     
-$("#categorylist").text(catStr);                        
-$("#categorylist").show("slow");            
-
-if (cat1) { $("#category1").show("slow"); };            
-if (cat2) { $("#category2").show("slow"); };            
-if (cat3) { $("#category3").show("slow"); };            
-if (cat4) { $("#category4").show("slow"); };            
-if (cat5) { $("#category5").show("slow"); };            
-if (cat6) { $("#category6").show("slow"); };            
-if (cat7) { $("#category7").show("slow"); };            
-if (cat8) { $("#category8").show("slow"); };            
-if (cat9) { $("#category9").show("slow"); };            
-if (cat10) { $("#category10").show("slow"); };            
-if (cat11) { $("#category11").show("slow"); };
-{ $("#closing").show("slow"); };
+var questions = [
+{
+  question: "Why did Jenson Button have to run to the podium after winning the 2009 race at Monaco?",
+  answer: "c",
+  choices: ['CSS', 'a cool thing', ' He mistakenly parked his victorious Brawn in the pit lane instead of on the pit straight, as is traditional for the top three finishers in Monaco', 'fourth answer']
+},
+{
+  question: "Which legendary driver famously cheated death after crashing his Lancia into the harbour in 1955?",
+  answer: "d",
+  choices: ['random', 'rando', 'cool', 'Alberto Ascari']
+},
+{
+  question: "How many times have Williams won in Monaco - three, six or ten?",
+  answer: "b",
+  choices: ['rand', '3 times (1980, 1983, 2003)', 'opti', 'alkj']
+},
+{
+  question: "Who celebrated his 2010 and 2012 victories at Monaco by backflipping into a swimming pool?",
+  answer: "a",
+  choices: ["Red Bull's Mark Webber", 'Mark Anthony', 'Tony Stark', 'Michael Schumacher']
+},
+{
+  question: "Which world champion famously likened driving at Monaco to 'riding a bicycle around your living room'?",
+  answer: "c",
+  choices: ['Lil Uzi', 'Steve Jobs', 'Nelson Piquet', 'Bill Gates']
+},
+{
+  question: "At which corner did Michael Schumacher controversially 'park' his Ferrari during qualifying in 2006?",
+  answer: "b",
+  choices: ['turn 4', 'Rascasse', 'tribute', 'the corner']
+},
+{
+  question: "The great Jim Clark took four pole positions in Monaco, but how many times did he win there?",
+  answer: "a",
+  choices: ['zero', 'one', 'three', 'five']
+},
+{
+  question: "By how much did McLaren's Ayrton Senna out-qualify team mate Alain Prost to claim pole at Monaco in 1988 - 0.4s, 0.8s or 1.4s?",
+  answer: "b",
+  choices: ['0.4s', '1.4s', '0.8s', '1s']
+},
+{
+  question: "What did McLaren fail to do for the only time in their history at Monaco in 1983?",
+  answer: "a",
+  choices: ['They failed to qualify either of their cars for the race', 'They did nothing', 'They didnt exist yet', 'No one knew about McLaren']
+},
+{
+  question: "Graham Hill earned the nickname 'Mr Monaco' for his five wins in the Principality, but who did he score the majority of his victories there with - BRM or Lotus?",
+  answer: "a",
+  choices: ['BRM', 'Lotus', 'McLaren', 'Mercedes']
 }
-    });});
+]
+$('#current-question').text(questions[0].question)
+console.log($('.answer-text'))
+$('.answer-text').eq(0).text(questions[0].choices[0])
+$('.answer-text').eq(1).text(questions[0].choices[1])
+$('.answer-text').eq(2).text(questions[0].choices[2])
+$('.answer-text').eq(3).text(questions[0].choices[3])
+
+var num = 0
+var currentQuestion = questions[num]
+var output = currentQuestion.answer
+$('input').on('click', function() {
+  console.log(this.value)
+  if(output == this.value) {
+    console.log('You got it right!')
+  } else {
+    console.log('wrong')
+  }
+
+
+  var index = Math.floor(Math.random() * questions.length)
+  $('#current-question').text(questions[index].question)
+  $('.answer-text').eq(0).text(questions[index].choices[0])
+  $('.answer-text').eq(1).text(questions[index].choices[1])
+  $('.answer-text').eq(2).text(questions[index].choices[2])
+  $('.answer-text').eq(3).text(questions[index].choices[3])
+
+  output = questions[index].answer
+})
+
+$('#startGame').on('click', function() {
+  $('#intro').addClass('hidden')
+  $('#gameboard').removeClass('hidden')
+})
+// //Working Code
+//   $('input').addEventListener('click', function() {
+//     if($('#q1').class = 'active') {
+//       $('#q1').addClass('hidden').removeClass('active')
+//       $('#q2').removeClass('hidden').addClass('active')
+//     }
+//   })
+// document.getElementById('q2').addEventListener('click', function() {
+//   if($('#q2').class = 'active') {
+//     $('#q2').addClass('hidden').removeClass('active')
+//     $('#q3').removeClass('hidden').addClass('active')
+//   }
+// })
+// document.getElementById('q3').addEventListener('click', function() {
+//   if($('#q3').class = 'active') {
+//     $('#q3').addClass('hidden').removeClass('active')
+//     $('#q4').removeClass('hidden').addClass('active')
+//   }
+// })
+// document.getElementById('q4').addEventListener('click', function() {
+//   if($('#q4').class = 'active') {
+//     $('#q4').addClass('hidden').removeClass('active')
+//     $('#q5').removeClass('hidden').addClass('active')
+//   }
+// })
+// document.getElementById('q5').addEventListener('click', function() {
+//   if($('#q5').class = 'active') {
+//     $('#q5').addClass('hidden').removeClass('active')
+//     $('#q6').removeClass('hidden').addClass('active')
+//   }
+// })
+// document.getElementById('q6').addEventListener('click', function() {
+//   if($('#q6').class = 'active') {
+//     $('#q6').addClass('hidden').removeClass('active')
+//     $('#q7').removeClass('hidden').addClass('active')
+//   }
+// })
+// document.getElementById('q7').addEventListener('click', function() {
+//   if($('#q7').class = 'active') {
+//     $('#q7').addClass('hidden').removeClass('active')
+//     $('#q8').removeClass('hidden').addClass('active')
+//   }
+// })
+// document.getElementById('q8').addEventListener('click', function() {
+//   if($('#q8').class = 'active') {
+//     $('#q8').addClass('hidden').removeClass('active')
+//     $('#q9').removeClass('hidden').addClass('active')
+//   }
+// })
+// document.getElementById('q9').addEventListener('click', function() {
+//   if($('#q9').class = 'active') {
+//     $('#q9').addClass('hidden').removeClass('active')
+//     $('#q10').removeClass('hidden').addClass('active')
+//   }
+// })
