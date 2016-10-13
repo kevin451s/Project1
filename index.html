@@ -6,6 +6,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Audiowide|Butcherman|Corben:700|Faster+One|Fontdiner+Swanky|Stalinist+One" rel="stylesheet">
 	</head>
 	<body>
+	<!-- First Game Board -->
 	<div class="hidden" id="gameboard">
 		<div id="jumbo">
 			<h1>
@@ -15,10 +16,27 @@
 		<div class="active" id="q1">
 			<p class="question" id='current-question'></p>
 			<ul class="answers">
-				<input type="button" name="q1" value="a" id="q1a"><label class="answer-text" for="q1a"></label><br/>
-				<input type="button" name="q1" value="b" id="q1b"><label class="answer-text" for="q1b"></label><br/>
-				<input type="button" name="q1" value="c" id="q1c"><label class="answer-text" for="q1c"></label><br/>
-				<input type="button" name="q1" value="d" id="q1d"><label class="answer-text" for="q1d"></label><br/>
+				<input type="button" name="q1" value="a" id="q1a" class="input"><label class="answer-text" for="q1a"></label><br/>
+				<input type="button" name="q1" value="b" id="q1b" class="input"><label class="answer-text" for="q1b"></label><br/>
+				<input type="button" name="q1" value="c" id="q1c" class="input"><label class="answer-text" for="q1c"></label><br/>
+				<input type="button" name="q1" value="d" id="q1d" class="input"><label class="answer-text" for="q1d"></label><br/>
+			</ul>
+		</div>
+	</div>
+	<!-- Second Game Board -->
+	<div class="hidden" id="gameboard2">
+		<div id="jumbo2">
+			<h1>
+				MotoGP TRIVIA
+			</h1>
+		</div>
+		<div class="active" id="q2">
+			<p class="question2" id="current-question2"></p>
+			<ul class="answers2">
+				<input type="button" name="q2" value="a" id="q2a" class="input2"><label class="answer-text2" for="q2a"></label><br/>
+				<input type="button" name="q2" value="b" id="q2b" class="input2"><label class="answer-text2" for="q2b"></label><br/>
+				<input type="button" name="q2" value="c" id="q2c" class="input2"><label class="answer-text2" for="q2c"></label><br/>
+				<input type="button" name="q2" value="d" id="q2d" class="input2"><label class="answer-text2" for="q2d"></label><br/>
 			</ul>
 		</div>
 	</div>
@@ -27,10 +45,14 @@
 			Trivia
 		</h1>
 			<p>
-				Welcome. Come test your knowledge on Formula 1 trivia.
+				Welcome. <br/> Test your knowledge on Formula 1 or MotoGP trivia.
 			</p>
-			<button id="startGame">
-				Start
+			<button class="startGameBtn btn" id="startGame">
+				Formula 1
+			</button>
+		<!-- Second Start screen Button -->
+			<button class="startGameBtn" id="startGame2">
+				MotoGP
 			</button>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

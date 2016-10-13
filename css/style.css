@@ -8,7 +8,7 @@ h1 {
 	color: rgba(85, 195, 195, 0.3);
 	-webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: rgb(52, 112, 171);
-	text-shadow: 5px;
+	/*text-shadow: 2px 2px #ff0000; */
 }
 #jumbo {
 	background: url("http://wallpoper.com/images/00/45/00/24/formula-1-car_00450024.jpg");
@@ -51,8 +51,24 @@ p {
 .hidden {
 	display: none;
 }
-#startGame {
+.startGameBtn {
 	text-align: center;
 	padding: 20px;
-	margin-left: 680px;
+	margin-left: 60px;
+	background-color: white;
+	width: 220px;
+	height: 60px;
+	border-radius: 10px;
+	float: left;
+}
+.btn {
+		margin-left: 480px;
+}
+#jumbo2 {
+	background: url("http://wallpapercave.com/wp/vHzlPcP.jpg");
+	background-size: 990px 430px;
+	background: cover;
+	height: 400px;
+	width: 1040px;
+	margin: 0 auto;
 }

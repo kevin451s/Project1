@@ -63,9 +63,9 @@ var output = currentQuestion.answer
 $('input').on('click', function() {
   console.log(this.value)
   if(output == this.value) {
-    console.log('You got it right!')
+    alert('You got it right!')
   } else {
-    console.log('wrong')
+    alert('wrong')
   }
 
 
@@ -83,58 +83,89 @@ $('#startGame').on('click', function() {
   $('#intro').addClass('hidden')
   $('#gameboard').removeClass('hidden')
 })
-// //Working Code
-//   $('input').addEventListener('click', function() {
-//     if($('#q1').class = 'active') {
-//       $('#q1').addClass('hidden').removeClass('active')
-//       $('#q2').removeClass('hidden').addClass('active')
-//     }
-//   })
-// document.getElementById('q2').addEventListener('click', function() {
-//   if($('#q2').class = 'active') {
-//     $('#q2').addClass('hidden').removeClass('active')
-//     $('#q3').removeClass('hidden').addClass('active')
-//   }
-// })
-// document.getElementById('q3').addEventListener('click', function() {
-//   if($('#q3').class = 'active') {
-//     $('#q3').addClass('hidden').removeClass('active')
-//     $('#q4').removeClass('hidden').addClass('active')
-//   }
-// })
-// document.getElementById('q4').addEventListener('click', function() {
-//   if($('#q4').class = 'active') {
-//     $('#q4').addClass('hidden').removeClass('active')
-//     $('#q5').removeClass('hidden').addClass('active')
-//   }
-// })
-// document.getElementById('q5').addEventListener('click', function() {
-//   if($('#q5').class = 'active') {
-//     $('#q5').addClass('hidden').removeClass('active')
-//     $('#q6').removeClass('hidden').addClass('active')
-//   }
-// })
-// document.getElementById('q6').addEventListener('click', function() {
-//   if($('#q6').class = 'active') {
-//     $('#q6').addClass('hidden').removeClass('active')
-//     $('#q7').removeClass('hidden').addClass('active')
-//   }
-// })
-// document.getElementById('q7').addEventListener('click', function() {
-//   if($('#q7').class = 'active') {
-//     $('#q7').addClass('hidden').removeClass('active')
-//     $('#q8').removeClass('hidden').addClass('active')
-//   }
-// })
-// document.getElementById('q8').addEventListener('click', function() {
-//   if($('#q8').class = 'active') {
-//     $('#q8').addClass('hidden').removeClass('active')
-//     $('#q9').removeClass('hidden').addClass('active')
-//   }
-// })
-// document.getElementById('q9').addEventListener('click', function() {
-//   if($('#q9').class = 'active') {
-//     $('#q9').addClass('hidden').removeClass('active')
-//     $('#q10').removeClass('hidden').addClass('active')
-//   }
-// })
+
+var questions2 = [
+  {
+    question: "Who was the first European rider to race a Japanese factory machine outside Japan? What year?",
+    answer: "a",
+    choices: ['Liverpudlian Ray Fay in 1960 on a Suzuki 250 at the IOM', 'Rand', 'asldfj', 'ajshdf']
+  },
+  {
+    question: "Who was the oldest rider to win a Moto GP in the 990 era?",
+    answer: "b",
+    choices: ['Allen Iverson', 'Troy Bayliss', 'Ken Bone', 'Michael Schumacher' ]
+  },
+  {
+    question: "Moto GP has had races on all but one continent - which continent hasn't been visited?",
+    answer: "c",
+    choices: ['Europe', 'Asia', 'Antarctica', 'North America']
+  },
+  {
+    question: "In 2004 Rossi won his first title on a Yamaha. How many podiums did the other Yamaha riders achieve that year?",
+    answer: "d",
+    choices: ['One', 'Two', 'Three', 'Zero']
+  },
+  {
+    question: "GP has been a world championship since 1949. Only one track has hosted a GP every year the World Championship has existed. What track and where?",
+    answer: "a",
+    choices: ['Assen in Holland', 'ButtonWillow Raceway', 'Mazda Raceway Laguna Seca', 'Lime Rock Park']
+  },
+  {
+    question: "In the entire history of GP only two riders have become champion without falling off for an entire season. Rossi is one - Who is the other rider?",
+    answer: "c",
+    choices: ['Alexander Wang', 'Givenchy', 'Sito Pons', 'Mr. Completely']
+  },
+  {
+    question: "In Moto GP 990 2005 who was the only rider to score points in every race of the year?",
+    answer: "a",
+    choices: ['Collin Edwards', 'Bruce Wayne', 'Rza', 'Kiz Whalifa']
+  },
+  {
+    question: "In the 990 era in Moto GP two riders have won on both a Honda and a Yamaha.",
+    answer: "d",
+    choices: ['The Stooges', 'Kanye and Kim', 'Shaq and Kobe', 'Rossi and Biagi']
+  },
+  {
+    question: "What rider in what year started from pole in only his second 990 level race?",
+    answer: "a",
+    choices: ['Casey Stoner 2006', 'Will Smith 2002', 'Ashton Kutcher 2010', 'Mila Kunis 2007']
+  },
+  {
+    question: "Only Geoff Duke, Val Rossi and one other rider won titles on different makes of motorcycles. Of the three only Rossi and the un-named rider won on two successive years. Who was the third rider?",
+    answer: "d",
+    choices: ['Geoff Duke', 'Val Rossi', 'Based God', 'Eddie Lawson']
+  }
+]
+$('#current-question2').text(questions2[0].question)
+console.log($('.answer-text2'))
+$('.answer-text2').eq(0).text(questions2[0].choices[0])
+$('.answer-text2').eq(1).text(questions2[0].choices[1])
+$('.answer-text2').eq(2).text(questions2[0].choices[2])
+$('.answer-text2').eq(3).text(questions2[0].choices[3])
+
+var num2 = 0
+var currentQuestion2 = questions2[num2]
+var output2 = currentQuestion2.answer
+$('.input2').on('click', function() {
+  console.log(this.value)
+  if(output2 == this.value) {
+    alert('You got it right!')
+  } else {
+    alert('wrong')
+  }
+
+  var index2 = Math.floor(Math.random() * questions.length)
+  $('#current-question2').text(questions2[index2].question)
+  $('.answer-text2').eq(0).text(questions2[index2].choices[0])
+  $('.answer-text2').eq(1).text(questions2[index2].choices[1])
+  $('.answer-text2').eq(2).text(questions2[index2].choices[2])
+  $('.answer-text2').eq(3).text(questions2[index2].choices[3])
+
+output = questions2[index2].answer
+})
+
+/* Function to start game board 2 */
+$('#startGame2').on('click', function() {
+  $('#intro').addClass('hidden')
+  $('#gameboard2').removeClass('hidden')
+})
