@@ -50,6 +50,8 @@ var questions = [
   choices: ['BRM', 'Lotus', 'McLaren', 'Mercedes']
 }
 ]
+var results = 0
+
 $('#current-question').text(questions[0].question)
 console.log($('.answer-text'))
 $('.answer-text').eq(0).text(questions[0].choices[0])
@@ -60,23 +62,38 @@ $('.answer-text').eq(3).text(questions[0].choices[3])
 var num = 0
 var currentQuestion = questions[num]
 var output = currentQuestion.answer
+questions.shift()
+
 $('.input').on('click', function() {
   console.log(this.value)
   if(output == this.value) {
-    alert('You got it right!')
+    // alert('You got it right!')
+    $('#q1').addClass('right')
+    setTimeout(function() {
+      $('#q1').removeClass('right')
+    }, 200)
+    results++
   } else {
-    alert('wrong')
+    $('#q1').addClass('wrong')
+    setTimeout(function() {
+      $('#q1').removeClass('wrong')
+    }, 200)
   }
 
+if(questions.length == 0) {
+  console.log("You got " + results + "/10")
+} else {
 
-  var index = Math.floor(Math.random() * questions.length)
-  $('#current-question').text(questions[index].question)
-  $('.answer-text').eq(0).text(questions[index].choices[0])
-  $('.answer-text').eq(1).text(questions[index].choices[1])
-  $('.answer-text').eq(2).text(questions[index].choices[2])
-  $('.answer-text').eq(3).text(questions[index].choices[3])
+    var index = Math.floor(Math.random() * questions.length)
+    $('#current-question').text(questions[index].question)
+    $('.answer-text').eq(0).text(questions[index].choices[0])
+    $('.answer-text').eq(1).text(questions[index].choices[1])
+    $('.answer-text').eq(2).text(questions[index].choices[2])
+    $('.answer-text').eq(3).text(questions[index].choices[3])
 
-  output = questions[index].answer
+    output = questions[index].answer
+    questions.splice(index, 1)
+  }
 })
 
 $('#startGame').on('click', function() {
@@ -136,6 +153,9 @@ var questions2 = [
     choices: ['Geoff Duke', 'Val Rossi', 'Based God', 'Eddie Lawson']
   }
 ]
+var results2 = 0
+
+
 $('#current-question2').text(questions2[0].question)
 console.log($('.answer-text2'))
 $('.answer-text2').eq(0).text(questions2[0].choices[0])
@@ -146,6 +166,7 @@ $('.answer-text2').eq(3).text(questions2[0].choices[3])
 var num2 = 0
 var currentQuestion2 = questions2[num2]
 var output2 = currentQuestion2.answer
+questions2.shift()
 $('.input2').on('click', function() {
   console.log(this.value)
   if(output2 == this.value) {
@@ -154,6 +175,7 @@ $('.input2').on('click', function() {
     setTimeout(function() {
       $('#q2').removeClass('right')
     }, 200)
+    results2++
   } else {
     $('#q2').addClass('wrong')
     setTimeout(function() {
@@ -161,14 +183,20 @@ $('.input2').on('click', function() {
     }, 200)
   }
 
-  var index2 = Math.floor(Math.random() * questions.length)
-  $('#current-question2').text(questions2[index2].question)
-  $('.answer-text2').eq(0).text(questions2[index2].choices[0])
-  $('.answer-text2').eq(1).text(questions2[index2].choices[1])
-  $('.answer-text2').eq(2).text(questions2[index2].choices[2])
-  $('.answer-text2').eq(3).text(questions2[index2].choices[3])
+  if(questions2.length == 0) {
+    console.log("You got this" + results2 + "/10")
+  } else {
 
-output = questions2[index2].answer
+    var index2 = Math.floor(Math.random() * questions2.length)
+    $('#current-question2').text(questions2[index2].question)
+    $('.answer-text2').eq(0).text(questions2[index2].choices[0])
+    $('.answer-text2').eq(1).text(questions2[index2].choices[1])
+    $('.answer-text2').eq(2).text(questions2[index2].choices[2])
+    $('.answer-text2').eq(3).text(questions2[index2].choices[3])
+
+    output = questions2[index2].answer
+    questions2.splice(index2, 1)
+  }
 })
 
 /* Function to start game board 2 */
