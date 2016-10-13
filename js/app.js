@@ -60,7 +60,7 @@ $('.answer-text').eq(3).text(questions[0].choices[3])
 var num = 0
 var currentQuestion = questions[num]
 var output = currentQuestion.answer
-$('input').on('click', function() {
+$('.input').on('click', function() {
   console.log(this.value)
   if(output == this.value) {
     alert('You got it right!')
