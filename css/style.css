@@ -54,15 +54,14 @@ p {
 .startGameBtn {
 	text-align: center;
 	padding: 20px;
-	margin-left: 60px;
+	/*margin-left: 60px;*/
 	background-color: white;
 	width: 220px;
 	height: 60px;
 	border-radius: 10px;
-	float: left;
 }
 .btn {
-		margin-left: 480px;
+		/*margin-left: 480px;*/
 }
 #jumbo2 {
 	background: url("http://wallpapercave.com/wp/vHzlPcP.jpg");
@@ -71,4 +70,13 @@ p {
 	height: 400px;
 	width: 1040px;
 	margin: 0 auto;
+}
+.containerBtn {
+	text-align: center;
+}
+.wrong {
+	background-color: red;
+}
+.right {
+	background-color: green;
 }

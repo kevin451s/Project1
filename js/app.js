@@ -149,9 +149,16 @@ var output2 = currentQuestion2.answer
 $('.input2').on('click', function() {
   console.log(this.value)
   if(output2 == this.value) {
-    alert('You got it right!')
+    //alert('You got it right!')
+    $('#q2').addClass('right')
+    setTimeout(function() {
+      $('#q2').removeClass('right')
+    }, 200)
   } else {
-    alert('wrong')
+    $('#q2').addClass('wrong')
+    setTimeout(function() {
+      $('#q2').removeClass('wrong')
+    }, 200)
   }
 
   var index2 = Math.floor(Math.random() * questions.length)
