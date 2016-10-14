@@ -1,3 +1,4 @@
+
 /* css for formula 1 heading */
 h1 {
 	text-align: center;
@@ -37,6 +38,10 @@ h1 {
 	background-color: rgba(12, 8, 8, 0.1);
 	width: 1000px;
 	margin: 0 auto;
+}
+/*CSS for background div of MotoGP Questions*/
+.bkgd {
+	background-color: white;
 }
 p {
 	text-align: center;
@@ -86,4 +91,20 @@ p {
 }
 .right {
 	background-color: green;
+}
+
+#q2a, #q2b, #q2c, #q2d {
+	width: 56px;
+    border: 1px solid black;
+    border-radius: 5px;
+		margin-right: 10px;
+		background-color: rgb(211, 163, 114);
+}
+.question2 {
+	font-family:  cursive;
+	color: black;
+}
+.answer-text2 {
+	font-family: 'sans-serif';
+	color: black;
 }

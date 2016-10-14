@@ -7,10 +7,10 @@ The game I made is Trivia. It consists of two different categories: MotoGP and F
 To install the game, the user must clone this repo https://github.com/kevin451s/Project1. After cloning the repo, the user must open the index.html file in Chrome or their desired browser.  
 
 #Technologies Used
-1.HTML
-2.CSS
-3.JavaScript
-4.jQuery
+1. HTML
+2. CSS
+3. JavaScript
+4. jQuery
 
 #User Stories
 
@@ -25,6 +25,6 @@ The first step I took to create the game was making a wireframe. I had an idea o
 Problems with program include awkward display on certain devices due to no media queries. My reset button also doesn't work. I will work on these in the future. I will also perhaps work on a score board in the future.
 
 #MVP
-1.Start Button actually starts the game
-2.2 different categories to choose from
-3.The game changes the divs color to green or red depending on whether the user answered a question right.  
+1. Start Button actually starts the game
+2. 2 different categories to choose from
+3. The game changes the divs color to green or red depending on whether the user answered a question right.  

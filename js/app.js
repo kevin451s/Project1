@@ -2,17 +2,17 @@ var questions = [
 {
   question: "Why did Jenson Button have to run to the podium after winning the 2009 race at Monaco?",
   answer: "c",
-  choices: ['CSS', 'a cool thing', ' He mistakenly parked his victorious Brawn in the pit lane instead of on the pit straight, as is traditional for the top three finishers in Monaco', 'fourth answer']
+  choices: ['He was disqualifed', 'His car caught fire.', ' He mistakenly parked his victorious Brawn in the pit lane instead of on the pit straight, as is traditional for the top three finishers in Monaco', 'His Team mate crashed and need to swap cars.']
 },
 {
   question: "Which legendary driver famously cheated death after crashing his Lancia into the harbour in 1955?",
   answer: "d",
-  choices: ['random', 'rando', 'cool', 'Alberto Ascari']
+  choices: ['Jenson Button', 'Sebastian Vettel', 'Kimi Raikkonen', 'Alberto Ascari']
 },
 {
-  question: "How many times have Williams won in Monaco - three, six or ten?",
+  question: "How many times have Williams won in Monaco?",
   answer: "b",
-  choices: ['rand', '3 times (1980, 1983, 2003)', 'opti', 'alkj']
+  choices: ['10 times', '3 times', '6 times', '9 times']
 },
 {
   question: "Who celebrated his 2010 and 2012 victories at Monaco by backflipping into a swimming pool?",
@@ -22,12 +22,12 @@ var questions = [
 {
   question: "Which world champion famously likened driving at Monaco to 'riding a bicycle around your living room'?",
   answer: "c",
-  choices: ['Lil Uzi', 'Steve Jobs', 'Nelson Piquet', 'Bill Gates']
+  choices: ['Alberto Ascari', 'Juan Manuel Fargio', 'Nelson Piquet', 'Phil Hill']
 },
 {
   question: "At which corner did Michael Schumacher controversially 'park' his Ferrari during qualifying in 2006?",
   answer: "b",
-  choices: ['turn 4', 'Rascasse', 'tribute', 'the corner']
+  choices: ['turn 4', 'Rascasse', 'The Hammerhead', 'the corner']
 },
 {
   question: "The great Jim Clark took four pole positions in Monaco, but how many times did he win there?",
@@ -81,7 +81,7 @@ $('.input').on('click', function() {
   }
 
 if(questions.length == 0) {
-  console.log("You got " + results + "/10")
+  alert("You got " + results + "/10")
 } else {
 
     var index = Math.floor(Math.random() * questions.length)
@@ -103,9 +103,9 @@ $('#startGame').on('click', function() {
 
 var questions2 = [
   {
-    question: "Who was the first European rider to race a Japanese factory machine outside Japan? What year?",
+    question: "Who was the first European rider to race a Japanese factory machine outside Japan?",
     answer: "a",
-    choices: ['Liverpudlian Ray Fay in 1960 on a Suzuki 250 at the IOM', 'Rand', 'asldfj', 'ajshdf']
+    choices: ['Liverpudlian Ray Fay on a Suzuki 250', 'Daniel Craig on a Ducati SuperSport', 'Ewan McGregor', 'Javier Bardem']
   },
   {
     question: "Who was the oldest rider to win a Moto GP in the 990 era?",
@@ -123,9 +123,9 @@ var questions2 = [
     choices: ['One', 'Two', 'Three', 'Zero']
   },
   {
-    question: "GP has been a world championship since 1949. Only one track has hosted a GP every year the World Championship has existed. What track and where?",
+    question: "GP has been a world championship since 1949. Only one track has hosted a GP every year the World Championship has existed. What track?",
     answer: "a",
-    choices: ['Assen in Holland', 'ButtonWillow Raceway', 'Mazda Raceway Laguna Seca', 'Lime Rock Park']
+    choices: ['Assen', 'ButtonWillow Raceway', 'Mazda Raceway Laguna Seca', 'Lime Rock Park']
   },
   {
     question: "In the entire history of GP only two riders have become champion without falling off for an entire season. Rossi is one - Who is the other rider?",
@@ -184,7 +184,7 @@ $('.input2').on('click', function() {
   }
 
   if(questions2.length == 0) {
-    console.log("You got this" + results2 + "/10")
+    alert("You got this" + results2 + "/10")
   } else {
 
     var index2 = Math.floor(Math.random() * questions2.length)
